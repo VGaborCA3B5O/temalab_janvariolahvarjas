@@ -14,25 +14,23 @@
                 Weboldal címe
             </div>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Kezdőlap</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"  asp-area="" asp-page="/menupont1">menupont1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <div>
+            <ul class="nav nav-tabs navul">
+                <li class="nav-item navli">
+                    <a class="nav-link activenav" asp-area="" asp-page="/Index">Kezdőlap</a>
+                </li>
+                <li class="nav-item navli">
+                    <a class="nav-link" asp-area="" asp-page="/New">Új képek</a>
+                </li>
+                <li class="nav-item navli">
+                    <a class="nav-link" asp-area="" asp-page="/Trending">Népszeű képek</a>
+                </li>
+                <div class="form-inline dropright">
+                    <a class="form-control mr-sm-2" asp-area="" asp-page="/SingIn">Bejelentkezés</a>
+                    <a class="form-control my-2 my-sm-0" asp-area="" asp-page="/SignUp">Regisztráció</a>
                 </div>
-            </div>
-        </nav>
+            </ul>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -42,7 +40,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - TemalabProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2020 - TemalabProject</a>
         </div>
     </footer>
 

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TemalabProject
 {
-    public class menupont1Model : PageModel
+    public class SignUpModel : PageModel
     {
         public void OnGet()
         {

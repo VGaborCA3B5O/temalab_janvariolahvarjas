@@ -12,9 +12,15 @@ a {
   color: #0366d6;
 }
 
+.mystyle_nav {
+    height: 50px;
+    background-color: black;
+    width: 100%;
+}
+
 .header_image {
     height: 120px;
-    background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(/images/header_img.jpg);
+    background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), url(/images/header_img.jpg);
 }
 
 .header_title {
@@ -85,4 +91,32 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navli {
+    float: left;
+}
+
+.navli a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.navli a:hover {
+    background-color: #111;
+}
+
+.activenav {
+    background-color: #111;
 }
