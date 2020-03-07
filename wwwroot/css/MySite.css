@@ -12,6 +12,23 @@ a {
   color: #0366d6;
 }
 
+.header_image {
+    height: 120px;
+    background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(/images/header_img.jpg);
+}
+
+.header_title {
+    padding-top: 25px;
+    height: 120px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-transform: uppercase !important;
+    font-weight:500;
+    color:antiquewhite;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
