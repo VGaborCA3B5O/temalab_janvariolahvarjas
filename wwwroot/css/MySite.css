@@ -20,7 +20,7 @@ a {
 
 .header_image {
     height: 120px;
-    background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(/images/header_img.jpg);
+    background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), url(/images/header_img.jpg);
 }
 
 .header_title {
@@ -93,7 +93,7 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-ul {
+.navul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -101,11 +101,11 @@ ul {
     background-color: #333;
 }
 
-li {
+.navli {
     float: left;
 }
 
-li a {
+.navli a {
         display: block;
         color: white;
         text-align: center;
@@ -113,6 +113,10 @@ li a {
         text-decoration: none;
     }
 
-li a:hover {
+.navli a:hover {
+    background-color: #111;
+}
+
+.activenav {
     background-color: #111;
 }
