@@ -1,1 +1,0 @@
-# temalab_janvariolahvarjas
