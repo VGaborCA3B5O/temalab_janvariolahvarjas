@@ -33,7 +33,10 @@ namespace WebApplication
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
-                        .AddScoped<UserService>();
+                .AddScoped<UserService>()
+                .AddScoped<PostService>()
+                .AddScoped<LikeService>()
+                .AddScoped<CommentService>();
 
             services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
