@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApplication.Data.SeedService;
+using WebApplication.Data.Entities;
+using WebApplication.Data.Services;
 
 namespace WebApplication
 {
@@ -31,10 +33,11 @@ namespace WebApplication
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
-                        .AddTransient<ISeedService, SeedService>();
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                        .AddScoped<UserService>();
+
+            services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddRazorPages();
+            services.AddTransient<ISeedService, SeedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

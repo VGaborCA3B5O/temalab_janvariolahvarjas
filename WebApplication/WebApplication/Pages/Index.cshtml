@@ -8,20 +8,5 @@
     <h1 class="display-4">Welcome to forpbchan</h1>
     <p>Description</p>
 </div>
-<div class="row">
-   @foreach (var post in Model.Posts)
-    {
-       <div class="card">
-           <h5 class="card-title">
-               @post.Id
-           </h5>
-           <h6 class="card-subtitle">
-               @post.Caption
-           </h6>
-           <div class="card-text">
-               @post.Uploader
-           </div>
-       </div>
-    }
-</div>
+
     

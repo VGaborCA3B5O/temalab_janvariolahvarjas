@@ -10,37 +10,22 @@ namespace WebApplication.Data.SeedService
     {
         public IDictionary<string, User> Users { get; } = new[]
         {
-            new User() { Id = 1, UserName = "xygeza"},
-            new User() {Id = 2, UserName = "xyvalaki"}
+            new User() { Id = 1, UserName = "xygeza",Admin=false},
+            new User() {Id = 2, UserName = "xyvalaki",Admin=false}
         }.ToDictionary(a => a.UserName);
 
-        public IList<Post> Posts { get; }
-        IList<Post> ISeedService.Posts { get => Posts; set => throw new NotImplementedException(); }
-
-        public SeedService()
+        public IDictionary<string, Post> Posts { get; } = new[]
         {
-            Posts = new List<Post>()
-            {
-                new Post
-                {
-                    Id = 1,
-                    Caption = "this is a caption",
-                    PictureSource = "picture is not found right now"
-                },
-                new Post
-                {
-                     Id = 2,
-                    Caption = "this is a caption 2",
-                    PictureSource = "picture is not found right now 2"
-                },
-                new Post
-                {
-                     Id = 3,
-                    Caption = "this is a caption 3",
-                    PictureSource = "picture is not found right now 3"
-                }
-            };
-        }
+            new Post{Id = 1, UserId=2,Content="cont1"},
+            new Post{Id = 2, UserId=3, Content="cont2"}
+        }.ToDictionary(p => p.Content);
 
+        public IDictionary<string, Like> Likes { get; }
+
+        public IDictionary<string, Comment> Comments { get; } = new[]
+        {
+            new Comment{Id = 1, Content="kom1", UserId=1, PostId=1 },
+            new Comment{Id = 2, Content="kom2", UserId = 2, PostId=1},
+        }.ToDictionary(c => c.Content);
     }
 }

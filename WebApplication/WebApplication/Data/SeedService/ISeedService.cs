@@ -9,6 +9,8 @@ namespace WebApplication.Data.SeedService
     public interface ISeedService
     {
         IDictionary<string, User> Users { get; }
-        IList<Post> Posts { get; set; }
+        IDictionary<string, Post> Posts { get; }
+        IDictionary<string, Like> Likes { get; }
+        IDictionary<string, Comment> Comments { get; }
     }
 }
