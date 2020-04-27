@@ -10,9 +10,10 @@ namespace WebApplication.Data.SeedService
     {
         public IDictionary<string, User> Users { get; } = new[]
         {
-            new User() { Id = 1, UserName = "xygeza",Admin=false},
-            new User() {Id = 2, UserName = "xyvalaki",Admin=false}
-        }.ToDictionary(a => a.UserName);
+            new User() { Id = 1, UserName = "Arnold",Admin=true,Profil = "Sziasztok!"},
+            new User() {Id = 2, UserName = "Bence",Admin=false,Profil = "Sziasztok!"}
+
+        }.ToDictionary(u => u.UserName);
 
         public IDictionary<string, Post> Posts { get; } = new[]
         {

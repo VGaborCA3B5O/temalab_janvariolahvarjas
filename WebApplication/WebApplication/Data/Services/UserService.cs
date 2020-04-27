@@ -16,12 +16,13 @@ namespace WebApplication.Data.Services
         public ApplicationDbContext DbContext { get; }
 
         public IEnumerable<UserDto> GetUsers() => DbContext.Users
-            .Include(b => b.Posts).ToList()
+            .Include(u => u.Posts).ToList()
                 .Select(u => new UserDto
                 {
                     Id = u.Id,
                     UserName = u.UserName,
                     Email = u.Email,
+                    Profil = u.Profil,
                     Admin = u.Admin,
                     Posts = u.Posts,
                 });

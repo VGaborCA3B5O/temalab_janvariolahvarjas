@@ -11,10 +11,8 @@ namespace WebApplication.Data.EntityConfiguration
 {
     public class UserEntityConfiguration : IEntityTypeConfiguration<User>
     {
-        private readonly ISeedService _seedService; 
-        public UserEntityConfiguration(ISeedService seedService)
-            => _seedService = seedService;
-        public void Configure(EntityTypeBuilder<User> builder)
-            => builder.HasData(_seedService.Users.Values);
+        private readonly ISeedService _seedService;
+        public UserEntityConfiguration(ISeedService seedService) => _seedService = seedService;
+        public void Configure(EntityTypeBuilder<User> builder) => builder.HasData(_seedService.Users.Values);
     }
 }

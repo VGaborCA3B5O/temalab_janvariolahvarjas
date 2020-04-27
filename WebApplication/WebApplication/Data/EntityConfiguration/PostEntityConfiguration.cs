@@ -11,12 +11,8 @@ namespace WebApplication.Data.EntityConfiguration
 {
     public class PostEntityConfiguration : IEntityTypeConfiguration<Post>
     {
-        private ISeedService _seedService;
-        public PostEntityConfiguration(ISeedService seedService)
-          => _seedService = seedService;
-
-
-        public void Configure(EntityTypeBuilder<Post> builder)
-            => builder.HasData(_seedService.Posts);
+        private readonly ISeedService _seedService;
+        public PostEntityConfiguration(ISeedService seedService) => _seedService = seedService;
+        public void Configure(EntityTypeBuilder<Post> builder) => builder.HasData(_seedService.Posts.Values);
     }
 }
