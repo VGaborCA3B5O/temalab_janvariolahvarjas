@@ -4,9 +4,69 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to forpbchan</h1>
-    <p>Description</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
 
-    
+        #like {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="bg">
+        <div class="card border-0 shadow my-5 bg">
+            <div class="card-body p-5 bg">
+                <div class="post1 row">
+                    <div class="user1">
+                        <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
+                            <a>Uploader Name </a>
+                    </div>
+                    <div class="post1">
+                        <img src="~/Images/MEMES/1.jpg" height="300" width="300" class="rounded float-right border border-dark" />
+                        <div>
+                            <button id="like" style="margin-right: 20px;">Like</button>
+                            <button id="like" style="margin-right: 20px;">Comment</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="post2 row">
+                    <div class="user2">
+                        <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
+                        <a>Uploader Name </a>
+                    </div>
+                    <div class="post2">
+                        <img src="~/Images/MEMES/2.jpg" height="300" width="300" class="rounded float-right border border-dark" />
+                        <div>
+                            <button id="like" style="margin-right: 20px;">Like</button>
+                            <button id="like" style="margin-right: 20px;">Comment</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="post3 row">
+                    <div class="user3">
+                        <img src="~/Images/defaultgirl.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
+                        <a>Uploader Name </a>
+                    </div>
+                    <div class="post1">
+                        <img src="~/Images/MEMES/3.jpg" height="300" width="300" class="rounded float-right border border-dark" />
+                        <div>
+                            <button id="like" style="margin-right: 20px;">Like</button>
+                            <button id="like" style="margin-right: 20px;">Comment</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
