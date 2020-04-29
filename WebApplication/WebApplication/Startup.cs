@@ -36,9 +36,10 @@ namespace WebApplication
                 .AddScoped<UserService>()
                 .AddScoped<PostService>()
                 .AddScoped<LikeService>()
-                .AddScoped<CommentService>();
+                .AddScoped<CommentService>()
+                .AddTransient<ISeedService, SeedService>();
 
-            services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
             services.AddTransient<ISeedService, SeedService>();
         }
