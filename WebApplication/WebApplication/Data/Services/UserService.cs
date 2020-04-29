@@ -16,6 +16,7 @@ namespace WebApplication.Data.Services
         public ApplicationDbContext DbContext { get; }
 
         public IEnumerable<UserDto> GetUsers() => DbContext.Users
+            .Include(b => b.Posts)
                 .Select(u => new UserDto
                 {
                     Id = u.Id,

@@ -240,13 +240,13 @@ namespace WebApplication.Migrations
                         {
                             Id = 1,
                             Content = "cont1",
-                            UserId = 2
+                            UserId = 1
                         },
                         new
                         {
                             Id = 2,
                             Content = "cont2",
-                            UserId = 3
+                            UserId = 2
                         });
                 });
 
@@ -328,7 +328,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "b3e813af-bacd-4d8a-877b-7bb2470bac85",
+                            ConcurrencyStamp = "63682096-35e8-4927-8388-d7e84076ef8f",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -342,7 +342,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "83da575a-9eab-4eac-87c1-896e42ba5e25",
+                            ConcurrencyStamp = "5b91e621-7fd7-45fd-bee9-d7a2b3a3b759",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
