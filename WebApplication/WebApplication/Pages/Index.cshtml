@@ -25,7 +25,8 @@
                 <div class="post1 row">
                     <div class="user1">
                         <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>@Model.Users.ElementAt(0).UserName</a>
+                        <a>Name: @Model.Users.ElementAt(0).UserName : </a>
+                        <a>Post: @Model.Post.ElementAt(0).Content</a>
                     </div>
                     <div class="post1">
                         <img src="~/Images/MEMES/1.jpg" height="300" width="300" class="rounded float-right border border-dark" />
@@ -39,8 +40,8 @@
                 <div class="post2 row">
                     <div class="user2">
                         <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>@Model.Users.ElementAt(1).UserName</a>
-                        <a>@Model.Post.ElementAt(1).Content</a>
+                        <a>Name: @Model.Users.ElementAt(1).UserName</a>
+                        <a>Post: @Model.Post.ElementAt(1).Content</a>
                     </div>
                     <div class="post2">
                         <img src="~/Images/MEMES/2.jpg" height="300" width="300" class="rounded float-right border border-dark" />
@@ -54,7 +55,8 @@
                 <div class="post3 row">
                     <div class="user3">
                         <img src="~/Images/defaultgirl.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>Uploader Name</a>
+                        <a>Name: @Model.Users.ElementAt(2).UserName</a>
+                        <a>Post: @Model.Post.ElementAt(2).Content</a>
                     </div>
                     <div class="post1">
                         <img src="~/Images/MEMES/3.jpg" height="300" width="300" class="rounded float-right border border-dark" />

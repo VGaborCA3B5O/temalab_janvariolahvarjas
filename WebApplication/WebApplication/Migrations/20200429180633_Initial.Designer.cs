@@ -10,7 +10,7 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200429174830_Initial")]
+    [Migration("20200429180633_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -241,14 +241,20 @@ namespace WebApplication.Migrations
                         new
                         {
                             Id = 1,
-                            Content = "cont1",
+                            Content = "Elso Post",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Content = "cont2",
+                            Content = "Masodik Post",
                             UserId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Content = "Harmadik Post",
+                            UserId = 3
                         });
                 });
 
@@ -330,7 +336,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "b0bee239-181c-461b-95c7-be0c6c8eacce",
+                            ConcurrencyStamp = "b4e4b394-8d50-4659-b5d8-66221ad1f7b5",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -345,7 +351,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "45a61d2b-9ab6-40e0-8511-5f334cc90f19",
+                            ConcurrencyStamp = "b158004d-0f5e-41c2-8e1c-f2c4503ea40d",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -360,7 +366,7 @@ namespace WebApplication.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "491bbf61-b796-4cfc-8ef8-1eaa7ea78eb8",
+                            ConcurrencyStamp = "627d36ee-e19e-4af4-a346-8471cca1627c",
                             Email = "Laura@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

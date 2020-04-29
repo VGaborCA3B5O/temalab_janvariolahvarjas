@@ -232,27 +232,32 @@ namespace WebApplication.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, true, "b0bee239-181c-461b-95c7-be0c6c8eacce", "Arnold@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Arnold" });
+                values: new object[] { 1, 0, true, "b4e4b394-8d50-4659-b5d8-66221ad1f7b5", "Arnold@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Arnold" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 2, 0, false, "45a61d2b-9ab6-40e0-8511-5f334cc90f19", "Bence@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Bence" });
+                values: new object[] { 2, 0, false, "b158004d-0f5e-41c2-8e1c-f2c4503ea40d", "Bence@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Bence" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 3, 0, false, "491bbf61-b796-4cfc-8ef8-1eaa7ea78eb8", "Laura@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Laura" });
+                values: new object[] { 3, 0, false, "627d36ee-e19e-4af4-a346-8471cca1627c", "Laura@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Laura" });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Content", "UserId" },
-                values: new object[] { 1, "cont1", 1 });
+                values: new object[] { 1, "Elso Post", 1 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Content", "UserId" },
-                values: new object[] { 2, "cont2", 2 });
+                values: new object[] { 2, "Masodik Post", 2 });
+
+            migrationBuilder.InsertData(
+                table: "Posts",
+                columns: new[] { "Id", "Content", "UserId" },
+                values: new object[] { 3, "Harmadik Post", 3 });
 
             migrationBuilder.InsertData(
                 table: "Comments",
