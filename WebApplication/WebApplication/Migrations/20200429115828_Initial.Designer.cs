@@ -10,7 +10,7 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200429113931_Initial")]
+    [Migration("20200429115828_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -330,10 +330,11 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "63682096-35e8-4927-8388-d7e84076ef8f",
+                            ConcurrencyStamp = "43cec881-88bd-4515-b7e4-462fb571210e",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            PasswordHash = "Agaxy0408!",
                             PhoneNumberConfirmed = false,
                             Profil = "Sziasztok!",
                             TwoFactorEnabled = false,
@@ -344,10 +345,11 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "5b91e621-7fd7-45fd-bee9-d7a2b3a3b759",
+                            ConcurrencyStamp = "9a6cb102-f8bf-4a5d-a926-c0b227074211",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            PasswordHash = "Agaxy0408!",
                             PhoneNumberConfirmed = false,
                             Profil = "Sziasztok!",
                             TwoFactorEnabled = false,

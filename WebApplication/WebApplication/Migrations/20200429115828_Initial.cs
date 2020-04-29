@@ -232,12 +232,12 @@ namespace WebApplication.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, true, "63682096-35e8-4927-8388-d7e84076ef8f", "Arnold@valami.hu", false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Arnold" });
+                values: new object[] { 1, 0, true, "43cec881-88bd-4515-b7e4-462fb571210e", "Arnold@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Arnold" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 2, 0, false, "5b91e621-7fd7-45fd-bee9-d7a2b3a3b759", "Bence@valami.hu", false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Bence" });
+                values: new object[] { 2, 0, false, "9a6cb102-f8bf-4a5d-a926-c0b227074211", "Bence@valami.hu", false, false, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Bence" });
 
             migrationBuilder.InsertData(
                 table: "Posts",
