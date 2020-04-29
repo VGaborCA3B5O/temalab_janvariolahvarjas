@@ -39,7 +39,7 @@ namespace WebApplication
                 .AddScoped<CommentService>()
                 .AddTransient<ISeedService, SeedService>();
 
-            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<User>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
             services.AddTransient<ISeedService, SeedService>();
         }

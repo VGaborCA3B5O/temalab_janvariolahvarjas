@@ -96,8 +96,8 @@ namespace WebApplication.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(nullable: false),
-                    ProviderKey = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },
@@ -141,8 +141,8 @@ namespace WebApplication.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false),
-                    LoginProvider = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    Name = table.Column<string>(maxLength: 128, nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -237,12 +237,12 @@ namespace WebApplication.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, true, "e11d006e-323f-43b6-b114-9d69401a5e03", null, false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Arnold" });
+                values: new object[] { 1, 0, true, "b3e813af-bacd-4d8a-877b-7bb2470bac85", "Arnold@valami.hu", false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Arnold" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 2, 0, false, "a9868b2f-fe6d-4f27-b06f-890495c363db", null, false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Bence" });
+                values: new object[] { 2, 0, false, "83da575a-9eab-4eac-87c1-896e42ba5e25", "Bence@valami.hu", false, false, null, null, null, null, null, false, "Sziasztok!", null, false, "Bence" });
 
             migrationBuilder.InsertData(
                 table: "Posts",

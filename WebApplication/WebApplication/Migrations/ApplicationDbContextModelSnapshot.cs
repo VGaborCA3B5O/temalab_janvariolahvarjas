@@ -97,10 +97,12 @@ namespace WebApplication.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -136,10 +138,12 @@ namespace WebApplication.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -324,7 +328,8 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "e11d006e-323f-43b6-b114-9d69401a5e03",
+                            ConcurrencyStamp = "b3e813af-bacd-4d8a-877b-7bb2470bac85",
+                            Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
@@ -337,7 +342,8 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "a9868b2f-fe6d-4f27-b06f-890495c363db",
+                            ConcurrencyStamp = "83da575a-9eab-4eac-87c1-896e42ba5e25",
+                            Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
