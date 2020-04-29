@@ -10,7 +10,7 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200429115828_Initial")]
+    [Migration("20200429174830_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -330,7 +330,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "43cec881-88bd-4515-b7e4-462fb571210e",
+                            ConcurrencyStamp = "b0bee239-181c-461b-95c7-be0c6c8eacce",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -345,7 +345,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "9a6cb102-f8bf-4a5d-a926-c0b227074211",
+                            ConcurrencyStamp = "45a61d2b-9ab6-40e0-8511-5f334cc90f19",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -354,6 +354,21 @@ namespace WebApplication.Migrations
                             Profil = "Sziasztok!",
                             TwoFactorEnabled = false,
                             UserName = "Bence"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccessFailedCount = 0,
+                            Admin = false,
+                            ConcurrencyStamp = "491bbf61-b796-4cfc-8ef8-1eaa7ea78eb8",
+                            Email = "Laura@valami.hu",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "Agaxy0408!",
+                            PhoneNumberConfirmed = false,
+                            Profil = "Sziasztok!",
+                            TwoFactorEnabled = false,
+                            UserName = "Laura"
                         });
                 });
 

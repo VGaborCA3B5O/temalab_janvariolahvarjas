@@ -16,6 +16,7 @@ namespace WebApplication.Pages
     {
         public IEnumerable<UserDto> Users { get; private set; }
         public IEnumerable<PostDto> Post { get; private set; }
+        public string username { get; private set; }
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -26,7 +27,9 @@ namespace WebApplication.Pages
         public void OnGet([FromServices]UserService userService, [FromServices]PostService postService)
         {
             Users = userService.GetUsers();
+            var users = Users.ToList();
             Post = postService.GetPosts();
+            username = users.ElementAt(0).UserName;
         }
     }
 }
