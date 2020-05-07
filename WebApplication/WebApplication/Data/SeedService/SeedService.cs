@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
+using WebApplication.SeedInterfaces;
 
 namespace WebApplication.Data.SeedService
 {

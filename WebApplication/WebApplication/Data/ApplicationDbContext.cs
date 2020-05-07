@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication.Data.Entities;
 using WebApplication.Data.EntityConfiguration;
 using WebApplication.Data.SeedService;
+using WebApplication.SeedInterfaces;
 
 namespace WebApplication.Data
 {

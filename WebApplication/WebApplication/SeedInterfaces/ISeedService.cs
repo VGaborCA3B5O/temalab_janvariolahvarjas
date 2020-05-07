@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
 
-namespace WebApplication.Data.SeedService
+namespace WebApplication.SeedInterfaces
 {
     public interface ISeedService
     {

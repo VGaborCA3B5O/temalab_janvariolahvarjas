@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using WebApplication.Data.SeedService;
 using WebApplication.Data.Entities;
 using WebApplication.Data.Services;
+using WebApplication.SeedInterfaces;
 
 namespace WebApplication
 {
@@ -30,6 +31,10 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddScoped<IRoleSeedService, RoleSeedService>();
+            services.AddScoped<IUserSeedService, UserSeedService>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
@@ -39,7 +44,6 @@ namespace WebApplication
                 .AddScoped<CommentService>()
                 .AddTransient<ISeedService, SeedService>();
 
-            services.AddDefaultIdentity<User>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
             services.AddTransient<ISeedService, SeedService>();
         }

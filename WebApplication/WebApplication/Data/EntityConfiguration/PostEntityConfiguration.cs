@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
 using WebApplication.Data.SeedService;
+using WebApplication.SeedInterfaces;
 
 namespace WebApplication.Data.EntityConfiguration
 {

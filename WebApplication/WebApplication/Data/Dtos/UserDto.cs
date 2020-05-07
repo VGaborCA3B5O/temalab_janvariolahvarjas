@@ -10,6 +10,7 @@ namespace WebApplication.Data.Dtos
     {
         public int Id { get; set; }
         public string UserName { get; set; }
+        public string Name { get; set; }
         public string Profil { get; set; }
         public bool Admin { get; set; }
         public string Email { get; set; }

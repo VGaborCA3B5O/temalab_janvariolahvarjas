@@ -286,6 +286,9 @@ namespace WebApplication.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -334,7 +337,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "b4e4b394-8d50-4659-b5d8-66221ad1f7b5",
+                            ConcurrencyStamp = "4a8ceae6-30de-44eb-b9da-adbb5f9f9040",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -349,7 +352,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "b158004d-0f5e-41c2-8e1c-f2c4503ea40d",
+                            ConcurrencyStamp = "5a7c3eec-1375-4465-93e1-a8a6a73807c9",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -364,7 +367,7 @@ namespace WebApplication.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "627d36ee-e19e-4af4-a346-8471cca1627c",
+                            ConcurrencyStamp = "813092f1-2cbb-4499-b349-8424aa37576c",
                             Email = "Laura@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
