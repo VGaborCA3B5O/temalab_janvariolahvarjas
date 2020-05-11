@@ -16,6 +16,8 @@ using WebApplication.Data.SeedService;
 using WebApplication.Data.Entities;
 using WebApplication.Data.Services;
 using WebApplication.SeedInterfaces;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using WebApplication.Services;
 
 namespace WebApplication
 {
@@ -38,11 +40,19 @@ namespace WebApplication
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
                 .AddTransient<ISeedService, SeedService>();
 
+            services.AddScoped<IEmailSender,EmailSender>();
             services.AddScoped<IRoleSeedService, RoleSeedService>();
             services.AddScoped<IUserSeedService, UserSeedService>();
 
+            services.AddScoped<UserService>();
+            services.AddScoped<PostService>();
+            services.AddScoped<CommentService>();
+            services.AddScoped<LikeService>();
+
+            services.AddMvc();
+            services.AddControllersWithViews();
+
             services.AddRazorPages();
-            services.AddTransient<ISeedService, SeedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,15 +72,18 @@ namespace WebApplication
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            app.UseRouting();
-
             app.UseAuthentication();
+            app.UseRouting();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name:"default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
         }
     }
