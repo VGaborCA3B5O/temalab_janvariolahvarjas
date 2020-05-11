@@ -20,8 +20,12 @@ namespace WebApplication.Hosting
                 var serviceProvider = scope.ServiceProvider;
                 var context = serviceProvider.GetRequiredService<TContext>();
                 context.Database.Migrate();
-                var roleSeeder = serviceProvider.GetRequiredService<IRoleSeedService>(); await roleSeeder.SeedRoleAsync();
-                var userSeeder = serviceProvider.GetRequiredService<IUserSeedService>(); await userSeeder.SeedUserAsync();
+
+                var roleSeeder = serviceProvider.GetRequiredService<IRoleSeedService>(); 
+                await roleSeeder.SeedRoleAsync();
+
+                var userSeeder = serviceProvider.GetRequiredService<IUserSeedService>(); 
+                await userSeeder.SeedUserAsync();
             }
             return host;
         }

@@ -19,56 +19,28 @@
 
 </head>
 <body>
-    <div class="bg">
-        <div class="card border-0 shadow my-5 bg">
-            <div class="card-body p-5 bg">
-                <div class="post1 row">
-                    <div class="user1">
-                        <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>Name: @Model.Users.ElementAt(0).UserName : </a>
-                        <a>Post: @Model.Post.ElementAt(0).Content</a>
-                    </div>
-                    <div class="post1">
-                        <img src="~/Images/MEMES/1.jpg" height="300" width="300" class="rounded float-right border border-dark" />
-                        <div>
-                            <button id="like" style="margin-right: 20px;">Like</button>
-                            <button id="like" style="margin-right: 20px;">Comment</button>
-                        </div>
+    <div class="row">
 
-                    </div>
-                </div>
-                <div class="post2 row">
-                    <div class="user2">
-                        <img src="~/Images/defaultboy.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>Name: @Model.Users.ElementAt(1).UserName</a>
-                        <a>Post: @Model.Post.ElementAt(1).Content</a>
-                    </div>
-                    <div class="post2">
-                        <img src="~/Images/MEMES/2.jpg" height="300" width="300" class="rounded float-right border border-dark" />
-                        <div>
-                            <button id="like" style="margin-right: 20px;">Like</button>
-                            <button id="like" style="margin-right: 20px;">Comment</button>
-                        </div>
+        @foreach (var post in Model.Post) {
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" />
+                <div class="card-body">
 
+                    <div class="card-title">
+                        <a>@post.User</a>
                     </div>
-                </div>
-                <div class="post3 row">
-                    <div class="user3">
-                        <img src="~/Images/defaultgirl.jpg" height="100" width="100" class="rounded float-left border border-primary rounded-circle" />
-                        <a>Name: @Model.Users.ElementAt(2).UserName</a>
-                        <a>Post: @Model.Post.ElementAt(2).Content</a>
+                    <div class="text-right">
+                        <a>@post.Comments.ToList().ToString()</a>
                     </div>
-                    <div class="post1">
-                        <img src="~/Images/MEMES/3.jpg" height="300" width="300" class="rounded float-right border border-dark" />
-                        <div>
-                            <button id="like" style="margin-right: 20px;">Like</button>
-                            <button id="like" style="margin-right: 20px;">Comment</button>
-                        </div>
+                    <div class="card-text">
+                        <a>@post.Content</a>
+                    </div>
 
-                    </div>
                 </div>
             </div>
         </div>
+        }
     </div>
 </body>
 </html>

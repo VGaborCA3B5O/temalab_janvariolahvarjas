@@ -26,10 +26,9 @@ namespace WebApplication.Pages
 
         public void OnGet([FromServices]UserService userService, [FromServices]PostService postService)
         {
-            Users = userService.GetUsers();
+            Users = userService.GetUsers().ToList();
             var users = Users.ToList();
-            Post = postService.GetPosts();
-            username = users.ElementAt(0).UserName;
+            Post = postService.GetPosts().ToList();
         }
     }
 }

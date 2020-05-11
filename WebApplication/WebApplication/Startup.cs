@@ -31,19 +31,15 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-
-            services.AddScoped<IRoleSeedService, RoleSeedService>();
-            services.AddScoped<IUserSeedService, UserSeedService>();
+            services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();           
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString(nameof(ApplicationDbContext))))
-                .AddScoped<UserService>()
-                .AddScoped<PostService>()
-                .AddScoped<LikeService>()
-                .AddScoped<CommentService>()
                 .AddTransient<ISeedService, SeedService>();
+
+            services.AddScoped<IRoleSeedService, RoleSeedService>();
+            services.AddScoped<IUserSeedService, UserSeedService>();
 
             services.AddRazorPages();
             services.AddTransient<ISeedService, SeedService>();

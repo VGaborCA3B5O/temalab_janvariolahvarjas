@@ -12,8 +12,12 @@ namespace WebApplication.Data.SeedService
     public class UserSeedService : IUserSeedService
     {
         private readonly UserManager<User> _userManager;
-        public UserSeedService(UserManager<User> userManager) =>
+
+        public UserSeedService(UserManager<User> userManager) 
+        { 
         _userManager = userManager;
+        }
+
         public async Task SeedUserAsync()
         {
             if (!(await _userManager.GetUsersInRoleAsync(Roles.Administrators)).Any())
