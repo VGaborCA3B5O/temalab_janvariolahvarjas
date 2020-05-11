@@ -20,7 +20,7 @@ namespace WebApplication.Data.SeedService
             {
                 var user = new User
                 {
-                    Email = "admin@bookshop.hu",
+                    Email = "admin@meme.hu",
                     Name = "Adminisztrátor",
                     SecurityStamp = Guid.NewGuid().ToString(),
                     UserName = "admin"

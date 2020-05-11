@@ -25,6 +25,6 @@ namespace WebApplication.Data.Services
                     User = l.User,
                     Post = l.Post,
                     PostId = l.PostId,
-                });
+                }).ToList();
     }
 }

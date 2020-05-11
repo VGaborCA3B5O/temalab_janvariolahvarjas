@@ -32,6 +32,7 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<User, IdentityRole<int>>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
             services.AddScoped<IRoleSeedService, RoleSeedService>();
             services.AddScoped<IUserSeedService, UserSeedService>();
 

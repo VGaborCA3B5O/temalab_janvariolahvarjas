@@ -12,7 +12,10 @@ namespace WebApplication.Data.SeedService
     {
         private readonly RoleManager<IdentityRole<int>> _roleManager;
 
-        public RoleSeedService(RoleManager<IdentityRole<int>> roleManager) => _roleManager = roleManager;
+        public RoleSeedService(RoleManager<IdentityRole<int>> roleManager) 
+        { 
+            _roleManager = roleManager; 
+        }
 
         public async Task SeedRoleAsync()
         {

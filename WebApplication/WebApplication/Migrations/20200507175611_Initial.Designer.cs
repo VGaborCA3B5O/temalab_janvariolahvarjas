@@ -10,8 +10,8 @@ using WebApplication.Data;
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200507144417_Intial")]
-    partial class Intial
+    [Migration("20200507175611_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,12 +99,10 @@ namespace WebApplication.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -140,12 +138,10 @@ namespace WebApplication.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -339,7 +335,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "4a8ceae6-30de-44eb-b9da-adbb5f9f9040",
+                            ConcurrencyStamp = "cb857cf6-2c76-4d18-9d25-1367a80c07ff",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -354,7 +350,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "5a7c3eec-1375-4465-93e1-a8a6a73807c9",
+                            ConcurrencyStamp = "cf0a0b17-53f5-4009-8ae3-45427c9e5afb",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -369,7 +365,7 @@ namespace WebApplication.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "813092f1-2cbb-4499-b349-8424aa37576c",
+                            ConcurrencyStamp = "087bc1a8-bdb9-4540-b5de-62dd97834450",
                             Email = "Laura@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

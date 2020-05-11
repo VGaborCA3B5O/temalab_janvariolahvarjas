@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication.Migrations
 {
-    public partial class Intial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -97,8 +97,8 @@ namespace WebApplication.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },
@@ -142,8 +142,8 @@ namespace WebApplication.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false),
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    Name = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -233,17 +233,17 @@ namespace WebApplication.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, true, "4a8ceae6-30de-44eb-b9da-adbb5f9f9040", "Arnold@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Arnold" });
+                values: new object[] { 1, 0, true, "cb857cf6-2c76-4d18-9d25-1367a80c07ff", "Arnold@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Arnold" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 2, 0, false, "5a7c3eec-1375-4465-93e1-a8a6a73807c9", "Bence@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Bence" });
+                values: new object[] { 2, 0, false, "cf0a0b17-53f5-4009-8ae3-45427c9e5afb", "Bence@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Bence" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "Admin", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Profil", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 3, 0, false, "813092f1-2cbb-4499-b349-8424aa37576c", "Laura@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Laura" });
+                values: new object[] { 3, 0, false, "087bc1a8-bdb9-4540-b5de-62dd97834450", "Laura@valami.hu", false, false, null, null, null, null, "Agaxy0408!", null, false, "Sziasztok!", null, false, "Laura" });
 
             migrationBuilder.InsertData(
                 table: "Posts",

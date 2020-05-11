@@ -12,7 +12,7 @@ namespace WebApplication.Data.Entities
         //public string UserName { get; set; }
         public string Profil { get; set; }
         public bool Admin { get; set; }
-        public ICollection<Post> Posts { get; set; }
         public string Name { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 }

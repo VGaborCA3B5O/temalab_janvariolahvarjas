@@ -25,6 +25,6 @@ namespace WebApplication.Data.Services
                     PostId = c.PostId,
                     Post = c.Post,
                     Content = c.Content
-                });
+                }).ToList();
     }
 }

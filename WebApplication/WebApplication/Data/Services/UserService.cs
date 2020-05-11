@@ -25,6 +25,6 @@ namespace WebApplication.Data.Services
                     Profil = u.Profil,
                     Admin = u.Admin,
                     Posts = u.Posts,
-                });
+                }).ToList();
     }
 }

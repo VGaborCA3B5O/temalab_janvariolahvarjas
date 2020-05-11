@@ -29,6 +29,6 @@ namespace WebApplication.Data.Services
                     Comments = p.Comments,
                     Likes = p.Likes
 
-                });
+                }).ToList();
     }
 }
