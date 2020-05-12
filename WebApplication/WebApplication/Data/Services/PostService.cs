@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Data.Dtos;
+using WebApplication.Data.Entities;
 
 namespace WebApplication.Data.Services
 {
@@ -16,11 +16,11 @@ namespace WebApplication.Data.Services
 
         public ApplicationDbContext DbContext { get; }
 
-        public IEnumerable<PostDto> GetPosts() => DbContext.Posts
+        public IEnumerable<Post> GetPosts() => DbContext.Posts
             .Include(p => p.User)
             .Include(p => p.Comments)
             .Include(p => p.Likes)
-                .Select(p => new PostDto
+                .Select(p => new Post
                 {
                     Id = p.Id,
                     UserId = p.UserId,

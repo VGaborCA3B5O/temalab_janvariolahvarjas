@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Data.Dtos;
+using WebApplication.Data.Entities;
 
 namespace WebApplication.Data.Services
 {
@@ -15,10 +15,10 @@ namespace WebApplication.Data.Services
         }
 
         public ApplicationDbContext DbContext { get; }
-        public IEnumerable<LikeDto> GetLikes() => DbContext.Likes
+        public IEnumerable<Like> GetLikes() => DbContext.Likes
             .Include(l => l.User)
             .Include(l => l.Post)
-                .Select(l => new LikeDto
+                .Select(l => new Like
                 {
                     Id = l.Id,
                     UserId = l.UserId,

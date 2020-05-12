@@ -6,40 +6,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <style>
 
-        #like {
-            background-color: blue;
-            color: white;
-            border-radius: 10px;
-            margin-left: 10px;
-        }
-    </style>
-
-</head>
 <body>
     <div class="row">
-
-        @foreach (var post in Model.Post) {
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-            <div class="card">
-                <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" />
-                <div class="card-body">
-
-                    <div class="card-title">
-                        <a>@post.User</a>
-                    </div>
-                    <div class="text-right">
-                        <a>@post.Comments.ToList().ToString()</a>
-                    </div>
-                    <div class="card-text">
-                        <a>@post.Content</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        @foreach (var post in Model.Post)
+        {
+            <vc:post p="post"></vc:post>
         }
     </div>
 </body>
