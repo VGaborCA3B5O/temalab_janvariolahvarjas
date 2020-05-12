@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Data.Dtos;
+using WebApplication.Data.Entities;
 
 namespace WebApplication.Data.Services
 {
@@ -14,10 +14,10 @@ namespace WebApplication.Data.Services
             DbContext = dbContext;
         }
         public ApplicationDbContext DbContext { get; }
-        public IEnumerable<CommentDto> GetComments() => DbContext.Comments
+        public IEnumerable<Comment> GetComments() => DbContext.Comments
             .Include(c => c.User)
             .Include(c => c.Post)
-                .Select(c => new CommentDto
+                .Select(c => new Comment
                 {
                     Id = c.Id,
                     UserId = c.UserId,

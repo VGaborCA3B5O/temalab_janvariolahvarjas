@@ -17,9 +17,9 @@ namespace WebApplication.Data
         private readonly ISeedService _seedService;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, ISeedService seedService) : base(options) => _seedService = seedService;
 
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<Like> Likes { get; set; }
+        public DbSet<Post> Posts { get; private set; }
+        public DbSet<Comment> Comments { get; private set; }
+        public DbSet<Like> Likes { get; private set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
