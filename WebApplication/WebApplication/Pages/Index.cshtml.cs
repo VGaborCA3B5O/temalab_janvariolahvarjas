@@ -14,7 +14,7 @@ namespace WebApplication.Pages
     public class IndexModel : PageModel
     {
         public IEnumerable<User> Users { get; private set; }
-        public IEnumerable<Post> Post { get; private set; }
+        public IEnumerable<Post> Posts { get; private set; }
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -25,9 +25,8 @@ namespace WebApplication.Pages
 
         public void OnGet([FromServices]UserService userService, [FromServices]PostService postService)
         {
-            Users = userService.GetUsers().ToList();
-            var users = Users.ToList();
-            Post = postService.GetPosts().ToList();
+            Users = userService.GetUsers();
+            Posts = postService.GetPosts();
         }
     }
 }
