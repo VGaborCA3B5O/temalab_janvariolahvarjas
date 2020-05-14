@@ -29,7 +29,9 @@ namespace WebApplication.Pages.Post
             }
 
             Post = await _context.Posts
+                .Include(k => k.Comments)
                 .Include(p => p.User).FirstOrDefaultAsync(m => m.Id == id);
+
 
             if (Post == null)
             {
