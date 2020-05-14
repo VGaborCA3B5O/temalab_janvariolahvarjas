@@ -14,7 +14,7 @@ namespace WebApplication.Pages
     public class IndexModel : PageModel
     {
         public IEnumerable<User> Users { get; private set; }
-        public IEnumerable<Post> Posts { get; private set; }
+        public IEnumerable<WebApplication.Data.Entities.Post> Posts { get; private set; }
 
         private readonly ILogger<IndexModel> _logger;
 

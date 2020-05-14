@@ -1,0 +1,15 @@
+﻿@page
+@model WebApplication.Pages.Post.DetailsModel
+
+<div class="card">
+    <img class="card-img" src="~/Images/MEMES/@(Model.Post.Id).jpg" />
+    <div class="card-body">
+        @Model.Post.User
+        <vc:user user="@Model.Post.User"></vc:user>
+    </div>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Post.Id">Edit</a> |
+    <a asp-page="./Delete" asp-route-id="@Model.Post.Id">Delete</a> |
+    <a asp-page="./Index">Back</a>
+</div>
