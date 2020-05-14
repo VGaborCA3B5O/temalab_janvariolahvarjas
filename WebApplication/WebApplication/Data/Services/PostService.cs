@@ -30,5 +30,24 @@ namespace WebApplication.Data.Services
                     Likes = p.Likes
 
                 }).ToList();
+
+        public Post GetPostById(int? id)
+        {
+            return DbContext.Posts
+            .Include(p => p.User)
+            .Include(p => p.Comments)
+            .Include(p => p.Likes)
+                .Select(p => new Post
+                {
+                    Id = p.Id,
+                    UserId = p.UserId,
+                    User = p.User,
+                    Content = p.Content,
+                    Comments = p.Comments,
+                    Likes = p.Likes
+
+                })
+                .FirstOrDefault(p => p.Id == id);
+        }
     }
 }
