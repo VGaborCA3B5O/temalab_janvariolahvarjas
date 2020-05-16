@@ -19,9 +19,9 @@ namespace WebApplication.Data.SeedService
 
         public IDictionary<string, Post> Posts { get; } = new[]
         {
-            new Post{Id = 1, UserId=1,Content="Elso Post"},
-            new Post{Id = 2, UserId=2, Content="Masodik Post"},
-            new Post{Id = 3, UserId=3, Content="Harmadik Post"}
+            new Post{Id = 1, UserId=1, Content="Elso Post", ImageName="1.jpg"},
+            new Post{Id = 2, UserId=2, Content="Masodik Post", ImageName="2.jpg"},
+            new Post{Id = 3, UserId=3, Content="Harmadik Post", ImageName="3.jpg"}
         }.ToDictionary(p => p.Content);
 
         public IDictionary<string, Like> Likes { get; }
