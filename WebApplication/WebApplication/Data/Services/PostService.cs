@@ -25,7 +25,7 @@ namespace WebApplication.Data.Services
                     Id = p.Id,
                     UserId = p.UserId,
                     User = p.User,
-                    Content = p.Content,
+                    Title = p.Title,
                     Comments = p.Comments,
                     Likes = p.Likes
 
@@ -42,7 +42,7 @@ namespace WebApplication.Data.Services
                     Id = p.Id,
                     UserId = p.UserId,
                     User = p.User,
-                    Content = p.Content,
+                    Title = p.Title,
                     Comments = p.Comments,
                     Likes = p.Likes
 
