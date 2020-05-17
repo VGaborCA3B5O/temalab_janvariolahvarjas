@@ -46,7 +46,7 @@ namespace WebApplication.Pages.Post
             }
 
             string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
-            string filePath = Path.Combine(hostingEnvironment.WebRootPath, "Images", fileName);
+            string filePath = Path.Combine(hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
             this.Image.CopyTo(new FileStream(filePath, FileMode.Create));
             this.Post.ImageName = fileName;
             this.Post.User = await _userManager.GetUserAsync(HttpContext.User);
