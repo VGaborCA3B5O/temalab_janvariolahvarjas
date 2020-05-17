@@ -7,16 +7,15 @@
     <div class="card-columns">
         @foreach (var post in Model.Posts)
         {
-            <div class="card">
+        <div class="card text-white bg-dark">
+            <div class="card-body">
                 <a asp-page="./Details" asp-route-id="@post.Id">
-                    <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" alt="Card image cap"/>
-                </a>
-                <div class="card-body">
                     <h5 class="card-title">@post.Content</h5>
-                    <p class="card-text">By @post.User</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+                </a>
+                <p class="card-text">By @post.User</p>
+                <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" />
             </div>
+        </div>
         }
     </div>
 
