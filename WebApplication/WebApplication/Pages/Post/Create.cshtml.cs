@@ -52,7 +52,7 @@ namespace WebApplication.Pages.Post
             this.Post.User = await _userManager.GetUserAsync(HttpContext.User);
             _context.Posts.Add(Post);       
             await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }
