@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication.Data;
 
 namespace WebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200516170721_AddImageNameToPost")]
+    partial class AddImageNameToPost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,10 +221,10 @@ namespace WebApplication.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ImageName")
+                    b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
@@ -238,22 +240,22 @@ namespace WebApplication.Migrations
                         new
                         {
                             Id = 1,
+                            Content = "Elso Post",
                             ImageName = "1.jpg",
-                            Title = "Elso Post",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
+                            Content = "Masodik Post",
                             ImageName = "2.jpg",
-                            Title = "Masodik Post",
                             UserId = 2
                         },
                         new
                         {
                             Id = 3,
+                            Content = "Harmadik Post",
                             ImageName = "3.jpg",
-                            Title = "Harmadik Post",
                             UserId = 3
                         });
                 });
@@ -339,7 +341,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "260037fa-6ba6-4926-bfdf-cd03ca8ad17c",
+                            ConcurrencyStamp = "6bf36f8a-9f18-45ba-ac1e-587704054b21",
                             Email = "Arnold@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -354,7 +356,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "3522da52-a3e7-44b5-bbd3-7e16d7d19d5d",
+                            ConcurrencyStamp = "61763a77-3161-439a-808e-2fd4f514f1ca",
                             Email = "Bence@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -369,7 +371,7 @@ namespace WebApplication.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "ca99060b-41d2-45fe-b4df-2aa940b67134",
+                            ConcurrencyStamp = "a7629d61-9a16-46bb-8736-b45b6f32b543",
                             Email = "Laura@valami.hu",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

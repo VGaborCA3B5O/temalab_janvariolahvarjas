@@ -10,7 +10,7 @@
 
     <div class="card w-100">
         <a asp-page="./Details" asp-route-id="@item.Id">
-            <img class="card-img-top" src="~/Images/MEMES/@(item.Id).jpg" />
+            <img class="card-img-top" src="~/Images/Uploads/@item.ImageName" />
         </a>
         <div class="card-body">
 
@@ -18,7 +18,7 @@
                 <a>@item.User</a>
             </div>
             <div class="card-text">
-                <a>@item.Content</a>
+                <a>@item.Title</a>
             </div>
         </div>
         <div class="card-footer">
