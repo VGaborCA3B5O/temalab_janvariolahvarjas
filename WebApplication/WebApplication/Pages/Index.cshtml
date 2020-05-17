@@ -4,11 +4,21 @@
     ViewData["Title"] = "Home page";
 }
 
-<!DOCTYPE html>
-<html lang="en">
+    <div class="card-columns">
+        @foreach (var post in Model.Posts)
+        {
+            <div class="card">
+                <a asp-page="./Details" asp-route-id="@post.Id">
+                    <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" alt="Card image cap"/>
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">@post.Content</h5>
+                    <p class="card-text">By @post.User</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        }
+    </div>
 
-<body>
-    <a class="nav-link text-info" asp-area="" asp-page="/Post/Index">Posts</a>
-</body>
-</html>
+
 

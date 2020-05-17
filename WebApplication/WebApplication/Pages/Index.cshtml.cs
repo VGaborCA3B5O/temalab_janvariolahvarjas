@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using WebApplication.Data;
 using WebApplication.Data.Entities;
 using WebApplication.Data.Services;
 
@@ -26,7 +23,7 @@ namespace WebApplication.Pages
         public void OnGet([FromServices]UserService userService, [FromServices]PostService postService)
         {
             Users = userService.GetUsers();
-            Posts = postService.GetPosts();
+            Posts = postService.GetPosts().OrderByDescending(x => x.Id);
         }
     }
 }
