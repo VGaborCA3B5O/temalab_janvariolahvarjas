@@ -27,8 +27,8 @@ namespace WebApplication.Data.Services
                     User = p.User,
                     Title = p.Title,
                     Comments = p.Comments,
-                    Likes = p.Likes
-
+                    Likes = p.Likes,
+                    ImageName = p.ImageName
                 }).ToList();
 
         public Post GetPostById(int? id)
@@ -44,8 +44,8 @@ namespace WebApplication.Data.Services
                     User = p.User,
                     Title = p.Title,
                     Comments = p.Comments,
-                    Likes = p.Likes
-
+                    Likes = p.Likes,
+                    ImageName = p.ImageName
                 })
                 .FirstOrDefault(p => p.Id == id);
         }
