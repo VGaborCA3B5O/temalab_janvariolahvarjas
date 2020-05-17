@@ -6,20 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data;
-using WebApplication.Data.Entities;
 
 namespace WebApplication.Pages.Post
 {
     public class DetailsModel : PageModel
     {
-        private readonly WebApplication.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public DetailsModel(WebApplication.Data.ApplicationDbContext context)
+        public DetailsModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public WebApplication.Data.Entities.Post Post { get; set; }
+        public Data.Entities.Post Post { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
