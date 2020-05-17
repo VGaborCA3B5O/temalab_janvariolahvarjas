@@ -10,10 +10,10 @@
         <div class="card text-white bg-dark">
             <div class="card-body">
                 <a asp-page="./Details" asp-route-id="@post.Id">
-                    <h5 class="card-title">@post.Content</h5>
+                    <h5 class="card-title">@post.Title</h5>
                 </a>
                 <p class="card-text">By @post.User</p>
-                <img class="card-img-top" src="~/Images/MEMES/@(post.Id).jpg" />
+                <img class="card-img-top" src="~/Images/Uploads/@(post.Id).jpg" />
             </div>
         </div>
         }
