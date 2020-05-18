@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data;
 using Microsoft.Extensions.Configuration;
@@ -55,9 +49,9 @@ namespace WebApplication
             services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
-                    options.Conventions.AuthorizePage("/Post/Create");
-                    options.Conventions.AuthorizePage("/Post/Edit");
-                    options.Conventions.AuthorizePage("/Post/Delete");
+                    options.Conventions.AuthorizePage("/Create");
+                    options.Conventions.AuthorizePage("/Edit");
+                    options.Conventions.AuthorizePage("/Delete");
 
                 });
             services.ConfigureApplicationCookie(options =>

@@ -1,33 +1,29 @@
 ﻿@page
 @model WebApplication.Pages.Post.EditModel
 
-<h4>Post</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Post.Id" />
-            <div class="form-group">
-                <label asp-for="Post.UserId" class="control-label"></label>
-                <select asp-for="Post.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
-                <span asp-validation-for="Post.UserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Post.Title" class="control-label"></label>
-                <input asp-for="Post.Title" class="form-control" />
-                <span asp-validation-for="Post.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+    <div class="card text-white bg-dark mx-auto" style="width: 32rem;">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Post.Id" />
+                <input type="hidden" asp-for="Post.UserId" />
+                <div class="form-group">
+                    <label asp-for="Post.Title" class="control-label"></label>
+                    <input asp-for="Post.Title" class="form-control" />
+                    <span asp-validation-for="Post.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control-file" type="file" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-danger" /> |
+                    <a class="text-danger" asp-page="Details" asp-route-id="@Model.Post.Id">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
