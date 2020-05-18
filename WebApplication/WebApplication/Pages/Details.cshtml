@@ -1,15 +1,19 @@
 ﻿@page
 @model WebApplication.Pages.Post.DetailsModel
 
-<div class="card">
-    <img class="card-img" src="~/Images/MEMES/@(Model.Post.Id).jpg" />
-    <div class="card-body">
-        @Model.Post.User
-        <vc:user user="@Model.Post.User"></vc:user>
+    <div class="card text-white bg-dark mx-auto" style="width: 32rem;">
+        <h4 class="card-header mt-1 mb-1">@Model.Post.Title</h4>
+        <img class="card-img-top" src="~/Images/Uploads/@Model.Post.ImageName" alt="Card image cap">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a class="text-danger" asp-page="Edit" asp-route-id="@Model.Post.Id">Edit</a> |
+                    <a class="text-danger" asp-page="Delete" asp-route-id="@Model.Post.Id">Delete</a> |
+                    <a class="text-danger" asp-page="Index">Back</a>
+                </div>
+                <div>
+                    <p class="card-text">By @Model.Post.User</p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Post.Id">Edit</a> |
-    <a asp-page="./Delete" asp-route-id="@Model.Post.Id">Delete</a> |
-    <a asp-page="./Index">Back</a>
-</div>

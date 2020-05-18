@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +27,6 @@ namespace WebApplication.Pages.Post
             Post = await _context.Posts
                 .Include(k => k.Comments)
                 .Include(p => p.User).FirstOrDefaultAsync(m => m.Id == id);
-
 
             if (Post == null)
             {

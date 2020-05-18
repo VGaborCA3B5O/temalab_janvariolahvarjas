@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,15 +16,19 @@ namespace WebApplication.Pages.Post
 {
     public class EditModel : PageModel
     {
-        private readonly WebApplication.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public EditModel(WebApplication.Data.ApplicationDbContext context)
+        public EditModel(ApplicationDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _hostingEnvironment = environment;
         }
 
         [BindProperty]
-        public WebApplication.Data.Entities.Post Post { get; set; }
+        public Data.Entities.Post Post { get; set; }
+        [BindProperty]
+        public IFormFile Image { set; get; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -41,15 +48,17 @@ namespace WebApplication.Pages.Post
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || this.Image == null)
             {
                 return Page();
             }
 
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
+            Image.CopyTo(new FileStream(filePath, FileMode.Create));
+            Post.ImageName = fileName;
             _context.Attach(Post).State = EntityState.Modified;
 
             try
@@ -68,7 +77,7 @@ namespace WebApplication.Pages.Post
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("Details", new { id = Post.Id });
         }
 
         private bool PostExists(int id)

@@ -14,13 +14,13 @@ namespace WebApplication.Pages.Post
     public class CreateModel : PageModel
     {
         private readonly Data.ApplicationDbContext _context;
-        private readonly IWebHostEnvironment hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly UserManager<User> _userManager;
 
         public CreateModel(Data.ApplicationDbContext context, IWebHostEnvironment environment, UserManager<User> userManager)
         {
             _context = context;
-            this.hostingEnvironment = environment;
+            _hostingEnvironment = environment;
             _userManager = userManager;
         }
 
@@ -46,7 +46,7 @@ namespace WebApplication.Pages.Post
             }
 
             string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
-            string filePath = Path.Combine(hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
             this.Image.CopyTo(new FileStream(filePath, FileMode.Create));
             this.Post.ImageName = fileName;
             this.Post.User = await _userManager.GetUserAsync(HttpContext.User);

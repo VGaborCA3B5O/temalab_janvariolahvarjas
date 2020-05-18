@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using WebApplication.Data;
-using WebApplication.Data.Entities;
+
 
 namespace WebApplication.Pages.Post
 {
     public class DeleteModel : PageModel
     {
-        private readonly WebApplication.Data.ApplicationDbContext _context;
+        private readonly Data.ApplicationDbContext _context;
 
-        public DeleteModel(WebApplication.Data.ApplicationDbContext context)
+        public DeleteModel(Data.ApplicationDbContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public WebApplication.Data.Entities.Post Post { get; set; }
+        public Data.Entities.Post Post { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -54,7 +50,7 @@ namespace WebApplication.Pages.Post
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("Index");
         }
     }
 }
