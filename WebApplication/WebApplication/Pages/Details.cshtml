@@ -8,15 +8,16 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
+
+<div class="card">
+    <img class="card-img" src="~/Images/MEMES/@(Model.Post.Id).jpg" />
+    <div class="card-body">
+        @Model.Post.User
+        <vc:user user="@Model.Post.User"></vc:user>
+    </div>
+</div>
 @if (SignInManager.IsSignedIn(User) && Int32.Parse(UserManager.GetUserId(User)) == Model.Post.UserId)
 {
-    <div class="card">
-        <img class="card-img" src="~/Images/MEMES/@(Model.Post.Id).jpg" />
-        <div class="card-body">
-            @Model.Post.User
-            <vc:user user="@Model.Post.User"></vc:user>
-        </div>
-    </div>
     <div>
         <a asp-page="./Edit" asp-route-id="@Model.Post.Id">Edit</a> |
         <a asp-page="./Delete" asp-route-id="@Model.Post.Id">Delete</a> |
@@ -28,13 +29,12 @@ else
     if (UserManager.GetUserId(User) != null && Model.Userer.Admin)
     {
         <a asp-page="./Delete" asp-route-id="@Model.Post.Id">Delete</a>
-    }
-    else
-    {
-        <a>You are not logged in or this is not your post.</a>
         <a asp-page="./Index">Back</a>
     }
+    else
+    {<a asp-page="./Index">Back</a>}
 }
+
 
 
 
