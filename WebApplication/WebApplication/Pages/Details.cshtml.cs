@@ -19,7 +19,7 @@ namespace WebApplication.Pages.Post
             _userManager = userManager;
         }
 
-        public Data.Entities.User Userer { get; set; }
+        public Data.Entities.User Author { get; set; }
         public Data.Entities.Post Post { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,7 +29,7 @@ namespace WebApplication.Pages.Post
                 return NotFound();
             }
 
-            Userer = await _userManager.GetUserAsync(HttpContext.User);
+            Author = await _userManager.GetUserAsync(HttpContext.User);
             Post = await _context.Posts
                 .Include(k => k.Comments)
                 .Include(p => p.User).FirstOrDefaultAsync(m => m.Id == id);
