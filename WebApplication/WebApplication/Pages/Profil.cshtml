@@ -1,0 +1,14 @@
+﻿@page
+@model WebApplication.ProfilModel
+@{
+    ViewData["Title"] = "Profil";
+}
+
+    <div class="card-columns">    
+        <div class="card text-white bg-dark">
+            <a>@Model.Userer.UserName</a>
+            <a>@Model.Userer.Id</a>
+            <a>@Model.Userer.Email</a>
+        </div>      
+    </div>
+

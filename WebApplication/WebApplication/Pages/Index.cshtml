@@ -11,6 +11,9 @@
         <a class="text-danger" asp-page="Details" asp-route-id="@post.Id">
             <h5 class="card-header">@post.Title</h5>
         </a>
+        <a class="text-danger" asp-page="Profil" asp-route-id="@post.UserId">
+            <h5 class="card-header">@post.User</h5>
+        </a>
         <img class="card-img-top" src="~/Images/Uploads/@post.ImageName" />
     </div>
     }
