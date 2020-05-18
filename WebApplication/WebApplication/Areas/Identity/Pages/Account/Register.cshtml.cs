@@ -50,7 +50,15 @@ namespace WebApplication.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-        
+
+            [Required]
+            [Display(Name = "UserName")]
+            public string UserName { get; set; }
+
+            [Required]
+            [Display(Name = "Name")]
+            public string Name { get; set; }
+
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -62,10 +70,6 @@ namespace WebApplication.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-
-            [Required]
-            [Display(Name = "UserName")]
-            public string UserName { get; set; }
 
         }
 
@@ -81,7 +85,7 @@ namespace WebApplication.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = Input.UserName, Email = Input.Email };
+                var user = new User { UserName = Input.UserName, Email = Input.Email, Name = Input.Name };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
