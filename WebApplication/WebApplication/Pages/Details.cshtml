@@ -23,8 +23,18 @@
         <a asp-page="./Index">Back</a>
     </div>
 }
-<a>You are not logged in or this is not your post.</a>
-<a asp-page="./Index">Back</a>
+else
+{
+    if (UserManager.GetUserId(User) != null && Model.Userer.Admin)
+    {
+        <a asp-page="./Delete" asp-route-id="@Model.Post.Id">Delete</a>
+    }
+    else
+    {
+        <a>You are not logged in or this is not your post.</a>
+        <a asp-page="./Index">Back</a>
+    }
+}
 
 
 

@@ -1,20 +1,25 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data;
+using WebApplication.Data.Entities;
 
 namespace WebApplication.Pages.Post
 {
     public class DetailsModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public DetailsModel(ApplicationDbContext context)
+        public DetailsModel(ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
+        public Data.Entities.User Userer { get; set; }
         public Data.Entities.Post Post { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -24,6 +29,7 @@ namespace WebApplication.Pages.Post
                 return NotFound();
             }
 
+            Userer = await _userManager.GetUserAsync(HttpContext.User);
             Post = await _context.Posts
                 .Include(k => k.Comments)
                 .Include(p => p.User).FirstOrDefaultAsync(m => m.Id == id);
