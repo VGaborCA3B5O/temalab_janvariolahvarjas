@@ -8,8 +8,7 @@ namespace WebApplication.Data.Entities
 {
     public class User : IdentityUser<int>
     {
-        //public int Id { get; set; }
-        //public string UserName { get; set; }
+        // Already has Id, UserName
         public string Profil { get; set; }
         public bool Admin { get; set; }
         public string Name { get; set; }
