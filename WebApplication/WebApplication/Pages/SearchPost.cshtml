@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplication.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<div>
+    @if (Model.SearchString != null)
+    {
+        <div class="card-columns">
+            <div class="card text-white bg-dark">
+                <a class="text-danger" asp-page="Details" asp-route-id="@Model.p.Id">
+                    <h5 class="card-header">@Model.p.Title</h5>
+                </a>
+                <img class="card-img-top" src="~/Images/Uploads/@Model.p.ImageName" />
+            </div>
+            </div>
+            }
+        </div>
