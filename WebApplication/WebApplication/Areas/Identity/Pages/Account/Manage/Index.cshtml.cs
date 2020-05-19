@@ -32,12 +32,24 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
+            [Required]
+            [DataType(DataType.Text)]
             [Display(Name = "User Name")]
             public string Username { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Full Name")]
+            public string Name { get; set; }
 
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Profil")]
+            public string Profil { get; set; }
         }
 
         private async Task LoadAsync(User user)
@@ -49,6 +61,8 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
             Input = new InputModel
             {
                 Username = userName,
+                Name = user.Name,
+                Profil = user.Profil,
                 PhoneNumber = phoneNumber
             };
         }
@@ -80,7 +94,8 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
                 await LoadAsync(user);
                 return Page();
             }
-
+         
+             
             var Username = await _userManager.GetUserNameAsync(user);
             if (Input.Username != Username)
             {
@@ -102,6 +117,19 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
                     throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
                 }
             }
+
+
+            if (Input.Name != user.Name) 
+            {
+                user.Name = Input.Name;
+            }
+            if (Input.Profil != user.Profil) 
+            {
+                user.Profil = Input.Profil;
+            }
+            
+
+            await _userManager.UpdateAsync(user);
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
