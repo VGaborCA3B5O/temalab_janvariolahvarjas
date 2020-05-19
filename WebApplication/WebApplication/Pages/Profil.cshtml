@@ -4,11 +4,19 @@
     ViewData["Title"] = "Profil";
 }
 
-    <div class="card-columns">    
-        <div class="card text-white bg-dark">
-            <a>@Model.Userer.UserName</a>
-            <a>@Model.Userer.Id</a>
-            <a>@Model.Userer.Email</a>
-        </div>      
-    </div>
+  
+    <div class="row">
+        <div class="column">
+            <div  class="card text-white bg-dark mx-auto" style="width: 24rem;">
+                <h4 class="card-header">@Model.Userer.UserName</h4>
+                <img class="card-img-top" src="~/Images/defaultboy.jpg" alt="Avatar" style="height:200px;width:200px">
 
+                <p>Full Name: @Model.Userer.Name</p>
+                <p>Email: @Model.Userer.Email</p>
+                <p>Phone Number: @Model.Userer.PhoneNumber</p>
+                <p>Admin Rank: @Model.Userer.Admin</p>
+                <textarea class="bg-dark text-white"> @Model.Userer.Profil </textarea>
+
+            </div>
+        </div>
+    </div>
