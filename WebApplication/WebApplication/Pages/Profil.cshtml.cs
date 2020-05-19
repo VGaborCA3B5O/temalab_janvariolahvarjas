@@ -14,12 +14,14 @@ namespace WebApplication
 {
     public class ProfilModel : PageModel
     {
+        public IEnumerable<WebApplication.Data.Entities.Post> Post { get; private set; }
         public Data.Entities.User Userer { get; set; }
         private readonly UserManager<User> _userManager;
 
-        public ProfilModel(UserManager<User> userManager)
+        public ProfilModel(UserManager<User> userManager, [FromServices]PostService postService)
         {
             _userManager = userManager;
+            Post = postService.GetPosts();
         }
 
         public IActionResult OnGet(int? id)
@@ -36,6 +38,7 @@ namespace WebApplication
                     Userer = user;
                 }
             }
+         
             if (Userer == null)
             {
                 return NotFound();
