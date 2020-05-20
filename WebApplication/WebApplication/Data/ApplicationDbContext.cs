@@ -18,8 +18,6 @@ namespace WebApplication.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, ISeedService seedService) : base(options) => _seedService = seedService;
 
         public DbSet<Post> Posts { get; private set; }
-        public DbSet<Comment> Comments { get; private set; }
-        public DbSet<Like> Likes { get; private set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,7 +33,6 @@ namespace WebApplication.Data
 
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration(_seedService));
             modelBuilder.ApplyConfiguration(new PostEntityConfiguration(_seedService));
-            modelBuilder.ApplyConfiguration(new CommentEntitiyConfiguration(_seedService));
         }
     }
 }

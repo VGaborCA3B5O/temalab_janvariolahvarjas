@@ -24,12 +24,5 @@ namespace WebApplication.Data.SeedService
             new Post{Id = 3, UserId = 3, Title = "Oké Pali bá", ImageName="3.jpg"}
         }.ToDictionary(p => p.Title);
 
-        public IDictionary<string, Like> Likes { get; }
-
-        public IDictionary<string, Comment> Comments { get; } = new[]
-        {
-            new Comment{Id = 1, Content="kom1", UserId = 1, PostId = 1},
-            new Comment{Id = 2, Content="kom2", UserId = 2, PostId = 1},
-        }.ToDictionary(c => c.Content);
     }
 }

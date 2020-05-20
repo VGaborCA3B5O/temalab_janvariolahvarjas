@@ -10,7 +10,5 @@ namespace WebApplication.SeedInterfaces
     {
         IDictionary<string, User> Users { get; }
         IDictionary<string, Post> Posts { get; }
-        IDictionary<string, Like> Likes { get; }
-        IDictionary<string, Comment> Comments { get; }
     }
 }
