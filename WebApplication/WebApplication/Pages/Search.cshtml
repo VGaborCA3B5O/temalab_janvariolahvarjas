@@ -1,0 +1,34 @@
+﻿@page
+@model WebApplication.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search for title</h1>
+<hr />
+<form>
+        <input class="form-control mb-3" type="text" asp-for="SearchString" placeholder="Enter title">
+</form>
+<div>
+    @if (Model.SearchString != null)
+    {
+        if (Model.FoundPosts.Count > 0)
+        {
+            <div class="card-columns">
+                @foreach (var post in Model.FoundPosts)
+                {
+                <div class="card text-white bg-dark">
+                    <a class="text-danger" asp-page="Details" asp-route-id="@post.Id">
+                        <h5 class="card-header">@post.Title</h5>
+                    </a>
+                    <img class="card-img-top" src="~/Images/Uploads/@post.ImageName" />
+                </div>
+                }
+            </div>
+        }
+        else
+        {
+            <h4>No post was found.</h4>
+        }
+    }
+</div>
