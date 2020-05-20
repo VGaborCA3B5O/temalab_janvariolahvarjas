@@ -16,14 +16,10 @@ namespace WebApplication.Data.Services
 
         public ApplicationDbContext DbContext { get; }
         public IEnumerable<Like> GetLikes() => DbContext.Likes
-            .Include(l => l.User)
-            .Include(l => l.Post)
                 .Select(l => new Like
                 {
                     Id = l.Id,
                     UserId = l.UserId,
-                    User = l.User,
-                    Post = l.Post,
                     PostId = l.PostId,
                 }).ToList();
     }
