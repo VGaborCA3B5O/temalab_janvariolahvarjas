@@ -14,6 +14,8 @@
 <div>
     @if (Model.SearchString != null)
     {
+        if (Model.p != null)
+        {
         <div class="card-columns">
             <div class="card text-white bg-dark">
                 <a class="text-danger" asp-page="Details" asp-route-id="@Model.p.Id">
@@ -22,5 +24,8 @@
                 <img class="card-img-top" src="~/Images/Uploads/@Model.p.ImageName" />
             </div>
             </div>
-            }
+        }
+        else {<a>@Model.SearchString Post not Found!</a>}
+    }
+
         </div>
