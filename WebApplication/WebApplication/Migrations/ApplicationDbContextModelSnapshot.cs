@@ -192,6 +192,62 @@ namespace WebApplication.Migrations
                             ImageName = "3.jpg",
                             Title = "Oké Pali bá",
                             UserId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ImageName = "4.jpg",
+                            Title = "Post4",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ImageName = "5.jpg",
+                            Title = "Post5",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ImageName = "6.jpg",
+                            Title = "Post6",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ImageName = "7.jpg",
+                            Title = "Post7",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ImageName = "8.jpg",
+                            Title = "Post8",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ImageName = "9.jpg",
+                            Title = "Post9",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ImageName = "10.jpg",
+                            Title = "Post10",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ImageName = "11.jpg",
+                            Title = "Post11",
+                            UserId = 1
                         });
                 });
 
@@ -279,7 +335,7 @@ namespace WebApplication.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Admin = true,
-                            ConcurrencyStamp = "9cc03aa9-0df5-45ef-bbd4-1cc28339e4a8",
+                            ConcurrencyStamp = "5873953c-68cb-4931-b031-b158e0ffb45c",
                             Email = "arnold@valami.hu",
                             EmailConfirmed = false,
                             Introduction = "Sziasztok!",
@@ -294,7 +350,7 @@ namespace WebApplication.Migrations
                             Id = 2,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "6fff0dc1-fae7-47cb-9424-6e076bbb6620",
+                            ConcurrencyStamp = "912f4b1b-cd6d-4cd6-a90d-890783e030a5",
                             Email = "bence@valami.hu",
                             EmailConfirmed = false,
                             Introduction = "Sziasztok!",
@@ -309,7 +365,7 @@ namespace WebApplication.Migrations
                             Id = 3,
                             AccessFailedCount = 0,
                             Admin = false,
-                            ConcurrencyStamp = "abf00ecf-fb27-478e-a529-b07570e1d118",
+                            ConcurrencyStamp = "10727c08-0382-4764-9f71-252474a58385",
                             Email = "laura@valami.hu",
                             EmailConfirmed = false,
                             Introduction = "Sziasztok!",
