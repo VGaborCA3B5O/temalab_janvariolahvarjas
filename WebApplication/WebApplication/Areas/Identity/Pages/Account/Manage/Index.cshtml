@@ -13,15 +13,15 @@
         <form id="profile-form" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
+                <label asp-for="Image" class="control-label"></label><br />
                 <img />
                 @if (Model.LoggedInUser.ProfilePicture != null)
                 {
-                    <img class="card-img" src="~/Images/ProfilePictures/@Model.LoggedInUser.ProfilePicture" alt="Avatar">
+                    <img src="~/Images/ProfilePictures/@Model.LoggedInUser.ProfilePicture" alt="Avatar" style="width:200px" />
                 }
                 else
                 {
-                    <img class="card-img" src="~/Images/ProfilePictures/default.jpg" alt="Avatar">
+                    <img src="~/Images/ProfilePictures/default.jpg" alt="Avatar" style="width:200px" />
                 }
                 <input asp-for="Image" class="form-control-file" type="file" />
             </div>
