@@ -22,7 +22,7 @@ namespace WebApplication.Data.Services
                     Id = u.Id,
                     UserName = u.UserName,
                     Email = u.Email,
-                    Profil = u.Profil,
+                    Introduction = u.Introduction,
                     Admin = u.Admin,
                     Posts = u.Posts,
                 }).ToList();
