@@ -11,9 +11,9 @@ namespace WebApplication.Data.SeedService
     {
         public IDictionary<string, User> Users { get; } = new[]
         {
-            new User() {Id = 1, UserName = "arnold", Name ="Arnold", Admin = true, Introduction = "Sziasztok!", Email = "arnold@valami.hu", ProfilePicture = "defaultboy.jpg"},
-            new User() {Id = 2, UserName = "bence", Name ="Bence", Admin = false, Introduction = "Sziasztok!", Email = "bence@valami.hu", ProfilePicture = "defaultgirl.jpg"},
-            new User() {Id = 3, UserName = "laura", Name ="Laura", Admin = false, Introduction = "Sziasztok!", Email = "laura@valami.hu", ProfilePicture = "defaultgirl.jpg"}
+            new User() {Id = 1, UserName = "arnold", Name ="Arnold", Admin = true, Introduction = "Sziasztok!", Email = "arnold@valami.hu"},
+            new User() {Id = 2, UserName = "bence", Name ="Bence", Admin = false, Introduction = "Sziasztok!", Email = "bence@valami.hu"},
+            new User() {Id = 3, UserName = "laura", Name ="Laura", Admin = false, Introduction = "Sziasztok!", Email = "laura@valami.hu"}
 
         }.ToDictionary(u => u.UserName);
 

@@ -10,7 +10,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <img class="card-img" src="~/Images/@Model.DisplayedUser.ProfilePicture" alt="Avatar">
+                    @if (Model.DisplayedUser.ProfilePicture != null)
+                    {
+                        <img class="card-img" src="~/Images/ProfilePictures/@Model.DisplayedUser.ProfilePicture" alt="Avatar">
+                    }
+                    else
+                    {
+                        <img class="card-img" src="~/Images/ProfilePictures/default.jpg" alt="Avatar">
+                    }
                 </div>
                 <div class="col-sm">
                     <p>Username: @Model.DisplayedUser.UserName</p>
