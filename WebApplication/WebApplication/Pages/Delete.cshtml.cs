@@ -1,18 +1,23 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-
+using WebApplication.Data.Entities;
 
 namespace WebApplication.Pages.Post
 {
     public class DeleteModel : PageModel
     {
         private readonly Data.ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public DeleteModel(Data.ApplicationDbContext context)
+        public DeleteModel(Data.ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -31,6 +36,10 @@ namespace WebApplication.Pages.Post
             if (Post == null)
             {
                 return NotFound();
+            }
+            else if (Post.UserId.ToString() != _userManager.GetUserId(User) && !User.IsInRole("Admin")) // logged in user is not an admin ?
+            {
+                return Redirect("./Identity/Account/AccessDenied");
             }
             return Page();
         }

@@ -5,7 +5,6 @@
 
 
 @model WebApplication.Pages.Post.DetailsModel
-@inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
 <div class="card text-white bg-dark mx-auto" style="width: 32rem;">
@@ -20,7 +19,7 @@
                         <a class="text-danger" asp-page="Edit" asp-route-id="@Model.Post.Id">Edit</a> | 
                     </span>  
                 }
-                @if (UserManager.GetUserId(User) != null && UserManager.GetUserId(User) == Model.Post.UserId.ToString()||UserManager.GetUserId(User) != null &&  Model.Author.Admin)
+                @if (UserManager.GetUserId(User) != null && (UserManager.GetUserId(User) == Model.Post.UserId.ToString() || Model.Author.Admin))
                 {
                     <span>
                         <a class="text-danger" asp-page="Delete" asp-route-id="@Model.Post.Id">Delete</a> | 
@@ -34,4 +33,3 @@
         </div>
     </div>
 </div>
-

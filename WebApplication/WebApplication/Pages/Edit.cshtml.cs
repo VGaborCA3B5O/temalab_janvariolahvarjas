@@ -32,6 +32,7 @@ namespace WebApplication.Pages.Post
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
