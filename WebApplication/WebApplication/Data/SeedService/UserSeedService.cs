@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
@@ -15,7 +14,7 @@ namespace WebApplication.Data.SeedService
 
         public UserSeedService(UserManager<User> userManager) 
         { 
-        _userManager = userManager;
+            _userManager = userManager;
         }
 
         public async Task SeedUserAsync()

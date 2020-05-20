@@ -88,7 +88,6 @@ namespace WebApplication.Pages.Post
                     throw;
                 }
             }
-
             return RedirectToPage("Details", new { id = Post.Id });
         }
 

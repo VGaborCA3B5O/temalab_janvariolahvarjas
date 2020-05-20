@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data.Entities;
 using WebApplication.Data.EntityConfiguration;
-using WebApplication.Data.SeedService;
 using WebApplication.SeedInterfaces;
 
 namespace WebApplication.Data

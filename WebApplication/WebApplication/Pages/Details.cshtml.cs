@@ -19,7 +19,7 @@ namespace WebApplication.Pages.Post
             _userManager = userManager;
         }
 
-        public Data.Entities.User Author { get; set; }
+        public User Author { get; set; }
         public Data.Entities.Post Post { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)

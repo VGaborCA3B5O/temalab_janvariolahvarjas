@@ -21,6 +21,5 @@ namespace WebApplication.Data.SeedService
             new Post{Id = 2, UserId = 2, Title = "Ez bárcsak én lennék most", ImageName="2.jpg"},
             new Post{Id = 3, UserId = 3, Title = "Oké Pali bá", ImageName="3.jpg"}
         }.ToDictionary(p => p.Title);
-
     }
 }
