@@ -31,7 +31,6 @@ namespace WebApplication.Pages.Post
 
             Author = await _userManager.GetUserAsync(HttpContext.User);
             Post = await _context.Posts
-                .Include(k => k.Comments)
                 .Include(p => p.User).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Post == null)

@@ -40,8 +40,6 @@ namespace WebApplication
 
             services.AddScoped<UserService>();
             services.AddScoped<PostService>();
-            services.AddScoped<CommentService>();
-            services.AddScoped<LikeService>();
 
             services.AddMvc();
             services.AddControllersWithViews();

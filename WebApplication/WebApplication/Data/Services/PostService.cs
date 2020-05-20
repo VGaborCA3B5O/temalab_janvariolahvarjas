@@ -18,16 +18,12 @@ namespace WebApplication.Data.Services
 
         public IEnumerable<Post> GetPosts() => DbContext.Posts
             .Include(p => p.User)
-            .Include(p => p.Comments)
-            .Include(p => p.Likes)
                 .Select(p => new Post
                 {
                     Id = p.Id,
                     UserId = p.UserId,
                     User = p.User,
                     Title = p.Title,
-                    Comments = p.Comments,
-                    Likes = p.Likes,
                     ImageName = p.ImageName
                 }).ToList();
 
@@ -35,16 +31,12 @@ namespace WebApplication.Data.Services
         {
             return DbContext.Posts
             .Include(p => p.User)
-            .Include(p => p.Comments)
-            .Include(p => p.Likes)
                 .Select(p => new Post
                 {
                     Id = p.Id,
                     UserId = p.UserId,
                     User = p.User,
                     Title = p.Title,
-                    Comments = p.Comments,
-                    Likes = p.Likes,
                     ImageName = p.ImageName
                 })
                 .FirstOrDefault(p => p.Id == id);

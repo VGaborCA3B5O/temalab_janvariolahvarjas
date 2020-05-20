@@ -12,7 +12,6 @@ namespace WebApplication.Data.Entities
         public User User { get; set; }
         public string Title { get; set; }
         public string ImageName { get; set; }
-        public ICollection<Comment> Comments { get; set; }
-        public ICollection<Like> Likes { get; set; }
+
     }
 }
