@@ -36,20 +36,18 @@ namespace WebApplication.Pages.Post
         [BindProperty]
         public IFormFile Image { set; get; }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || this.Image == null)
+            if (Post.Title == null || Image == null)
             {
                 return Page();
             }
 
             string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
             string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
-            this.Image.CopyTo(new FileStream(filePath, FileMode.Create));
-            this.Post.ImageName = fileName;
-            this.Post.User = await _userManager.GetUserAsync(HttpContext.User);
+            Image.CopyTo(new FileStream(filePath, FileMode.Create));
+            Post.ImageName = fileName;
+            Post.User = await _userManager.GetUserAsync(HttpContext.User);
             _context.Posts.Add(Post);       
             await _context.SaveChangesAsync();
             return RedirectToPage("/Index");
