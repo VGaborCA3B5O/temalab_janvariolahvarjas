@@ -19,7 +19,7 @@
                         <a class="text-danger" asp-page="Edit" asp-route-id="@Model.Post.Id">Edit</a> | 
                     </span>  
                 }
-                @if (UserManager.GetUserId(User) != null && (UserManager.GetUserId(User) == Model.Post.UserId.ToString() || Model.Author.Admin))
+                @if (UserManager.GetUserId(User) != null && (UserManager.GetUserId(User) == Model.Post.UserId.ToString() || User.IsInRole("Administrators")))
                 {
                     <span>
                         <a class="text-danger" asp-page="Delete" asp-route-id="@Model.Post.Id">Delete</a> | 
