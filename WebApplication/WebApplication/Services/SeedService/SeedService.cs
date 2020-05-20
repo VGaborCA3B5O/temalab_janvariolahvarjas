@@ -20,14 +20,13 @@ namespace WebApplication.Services.SeedService
             new Post{Id = 1, UserId = 1, Title = "Ugye nem csak én híztam be", ImageName="1.jpg"},
             new Post{Id = 2, UserId = 2, Title = "Ez bárcsak én lennék most", ImageName="2.jpg"},
             new Post{Id = 3, UserId = 3, Title = "Oké Pali bá", ImageName="3.jpg"},
-            new Post{Id = 4, UserId = 2, Title = "Post4", ImageName="4.jpg"},
-            new Post{Id = 5, UserId = 1, Title = "Post5", ImageName="5.jpg"},
-            new Post{Id = 6, UserId = 3, Title = "Post6", ImageName="6.jpg"},
-            new Post{Id = 7, UserId = 2, Title = "Post7", ImageName="7.jpg"},
-            new Post{Id = 8, UserId = 3, Title = "Post8", ImageName="8.jpg"},
-            new Post{Id = 9, UserId = 3, Title = "Post9", ImageName="9.jpg"},
-            new Post{Id = 10, UserId = 1, Title = "Post10", ImageName="10.jpg"},
-            new Post{Id = 11, UserId = 1, Title = "Post11", ImageName="11.jpg"}
+            new Post{Id = 4, UserId = 2, Title = "Ideje megtanulni kezetmosni", ImageName="4.jpg"},
+            new Post{Id = 5, UserId = 1, Title = "Fujj", ImageName="5.jpg"},
+            new Post{Id = 6, UserId = 3, Title = "Norbi", ImageName="6.jpg"},
+            new Post{Id = 7, UserId = 2, Title = "Milyen igaz :(", ImageName="7.jpg"},
+            new Post{Id = 8, UserId = 3, Title = "Korona megoldja úgyis", ImageName="8.jpg"},
+            new Post{Id = 9, UserId = 3, Title = "Szep", ImageName="9.jpg"},
+            new Post{Id = 10, UserId = 1, Title = "Szilárd papa", ImageName="10.jpg"}
         }.ToDictionary(p => p.Title);
     }
 }
