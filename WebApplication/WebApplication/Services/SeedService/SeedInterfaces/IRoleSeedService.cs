@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace WebApplication.SeedInterfaces
+namespace WebApplication.Services.SeedService.SeedInterfaces
 {
     public interface IRoleSeedService
     {

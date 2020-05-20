@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data.Entities;
 using WebApplication.Data.EntityConfiguration;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
 
 namespace WebApplication.Data
 {

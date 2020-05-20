@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using WebApplication.Data;
-using WebApplication.Hosting;
+using WebApplication.Services.Hosting;
 
 namespace WebApplication
 {

@@ -6,10 +6,9 @@ using WebApplication.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApplication.Data.SeedService;
 using WebApplication.Data.Entities;
-using WebApplication.Data.Services;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
+using WebApplication.Services.SeedService;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using WebApplication.Services;
 

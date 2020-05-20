@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WebApplication.Data.Entities;
 
-namespace WebApplication.SeedInterfaces
+namespace WebApplication.Services.SeedService.SeedInterfaces
 {
     public interface ISeedService
     {

@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
-using WebApplication.Data.SeedService;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService;
+using WebApplication.Services.SeedService.SeedInterfaces;
 
 namespace WebApplication.Data.EntityConfiguration
 {

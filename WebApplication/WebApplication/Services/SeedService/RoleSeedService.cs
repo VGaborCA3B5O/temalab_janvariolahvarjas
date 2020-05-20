@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
 using WebApplication.Users;
 
-namespace WebApplication.Data.SeedService
+namespace WebApplication.Services.SeedService
 {
     public class RoleSeedService : IRoleSeedService
     {

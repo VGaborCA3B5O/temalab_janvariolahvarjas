@@ -2,9 +2,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
 
-namespace WebApplication.Hosting
+namespace WebApplication.Services.Hosting
 {
     public static class WebHostDataExtensions
     {

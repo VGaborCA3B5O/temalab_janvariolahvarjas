@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WebApplication.Data.Entities;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
 
-namespace WebApplication.Data.SeedService
+namespace WebApplication.Services.SeedService
 {
     public class SeedService : ISeedService
     {

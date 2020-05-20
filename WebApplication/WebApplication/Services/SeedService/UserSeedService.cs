@@ -3,10 +3,10 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Data.Entities;
-using WebApplication.SeedInterfaces;
+using WebApplication.Services.SeedService.SeedInterfaces;
 using WebApplication.Users;
 
-namespace WebApplication.Data.SeedService
+namespace WebApplication.Services.SeedService
 {
     public class UserSeedService : IUserSeedService
     {
