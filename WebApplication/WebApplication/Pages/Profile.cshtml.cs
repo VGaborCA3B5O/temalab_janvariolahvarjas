@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.V3.Pages.Account.Manage.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using WebApplication.Data.Entities;
 using WebApplication.Data.Services;
 
 namespace WebApplication
 {
-    public class ProfilModel : PageModel
+    public class ProfileModel : PageModel
     {
-        public IEnumerable<WebApplication.Data.Entities.Post> Post { get; private set; }
-        public Data.Entities.User Userer { get; set; }
+        public IEnumerable<Post> Post { get; private set; }
+        public User DisplayedUser { get; set; }
         private readonly UserManager<User> _userManager;
 
-        public ProfilModel(UserManager<User> userManager, [FromServices]PostService postService)
+        public ProfileModel(UserManager<User> userManager, [FromServices]PostService postService)
         {
             _userManager = userManager;
             Post = postService.GetPosts();
@@ -35,18 +30,15 @@ namespace WebApplication
             {
                 if (user.Id == id)
                 {
-                    Userer = user;
+                    DisplayedUser = user;
                 }
             }
          
-            if (Userer == null)
+            if (DisplayedUser == null)
             {
                 return NotFound();
             }
             return Page();
-
-
         }
-
     }
 }
