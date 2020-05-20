@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,21 +17,24 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public IndexModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager)
+        public IndexModel(UserManager<User> userManager, SignInManager<User> signInManager, IWebHostEnvironment environment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _hostingEnvironment = environment;
         }
 
-
+        public User LoggedInUser { get; set; }
         [TempData]
         public string StatusMessage { get; set; }
 
         [BindProperty]
         public InputModel Input { get; set; }
+
+        [BindProperty]
+        public IFormFile Image { set; get; }
 
         public class InputModel
         {
@@ -42,11 +48,6 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Full Name")]
             public string Name { get; set; }
 
-            [Phone]
-            [Display(Name = "Phone number")]
-            public string PhoneNumber { get; set; }
-
-            [Required]
             [DataType(DataType.Text)]
             [Display(Name = "Introduction")]
             public string Introduction { get; set; }
@@ -54,16 +55,13 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
 
         private async Task LoadAsync(User user)
         {
-            var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
+            LoggedInUser = user;
 
             Input = new InputModel
             {
-                Username = userName,
+                Username = await _userManager.GetUserNameAsync(user),
                 Name = user.Name,
-                Introduction = user.Introduction,
-                PhoneNumber = phoneNumber
+                Introduction = user.Introduction
             };
         }
 
@@ -107,18 +105,6 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            if (Input.PhoneNumber != phoneNumber)
-            {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
-                {
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
-                }
-            }
-
-
             if (Input.Name != user.Name) 
             {
                 user.Name = Input.Name;
@@ -127,7 +113,13 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
             {
                 user.Introduction = Input.Introduction;
             }
-            
+            if (Image != null)
+            {
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
+                string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "ProfilePictures", fileName);
+                Image.CopyTo(new FileStream(filePath, FileMode.Create));
+                user.ProfilePicture = fileName;
+            }
 
             await _userManager.UpdateAsync(user);
 
