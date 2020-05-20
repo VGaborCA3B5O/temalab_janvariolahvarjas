@@ -48,8 +48,8 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
 
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "Profil")]
-            public string Profil { get; set; }
+            [Display(Name = "Introduction")]
+            public string Introduction { get; set; }
         }
 
         private async Task LoadAsync(User user)
@@ -62,7 +62,7 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
             {
                 Username = userName,
                 Name = user.Name,
-                Profil = user.Profil,
+                Introduction = user.Introduction,
                 PhoneNumber = phoneNumber
             };
         }
@@ -123,9 +123,9 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
             {
                 user.Name = Input.Name;
             }
-            if (Input.Profil != user.Profil) 
+            if (Input.Introduction != user.Introduction) 
             {
-                user.Profil = Input.Profil;
+                user.Introduction = Input.Introduction;
             }
             
 

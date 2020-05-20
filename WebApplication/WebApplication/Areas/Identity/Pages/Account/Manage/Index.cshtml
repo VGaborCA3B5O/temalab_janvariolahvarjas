@@ -5,7 +5,8 @@
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
-<h4>@ViewData["Title"]</h4>
+<h1>@ViewData["Title"]</h1>
+<hr />
 <partial name="_StatusMessage" model="Model.StatusMessage" />
 <div class="row">
     <div class="col-md-6">
@@ -22,25 +23,20 @@
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.PhoneNumber"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                <label asp-for="Input.Introduction"></label>
+                <input asp-for="Input.Introduction" class="form-control" />
+                <span asp-validation-for="Input.Introduction" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Profil"></label>
-                <input asp-for="Input.Profil" class="form-control" />
-                <span asp-validation-for="Input.Profil" class="text-danger"></span>
+                <a id="password-change" class="text-secondary" asp-page="./ChangePassword">Change Password</a>
             </div>
             <div class="form-group">
-                <a id="password-change" asp-page="./ChangePassword">Change Password</a>
+                <a id="forgot-password" class="text-secondary" asp-area="Identity" asp-page="/Account/ResetPassword">Reset Password</a>
             </div>
             <div class="form-group">
-                <a id="forgot-password" asp-area="Identity" asp-page="/Account/ResetPassword">Reset Password</a>
+                <a id="email-change" class="text-secondary" asp-page="./Email">Change Email</a>
             </div>
-            <div class="form-group">
-                <a id="email-change" asp-page="./Email">Change Email</a>
-            </div>
-            <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+            <button id="update-profile-button" type="submit" class="btn btn-dark">Save</button>
         </form>
     </div>
 </div>
