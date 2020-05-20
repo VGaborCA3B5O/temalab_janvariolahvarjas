@@ -18,11 +18,13 @@ namespace WebApplication.Pages.Post
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly UserManager<User> _userManager;
 
-        public EditModel(ApplicationDbContext context, IWebHostEnvironment environment)
+        public EditModel(ApplicationDbContext context, IWebHostEnvironment environment, UserManager<User> userManager)
         {
             _context = context;
             _hostingEnvironment = environment;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -45,7 +47,12 @@ namespace WebApplication.Pages.Post
             {
                 return NotFound();
             }
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            else if (Post.UserId.ToString() != _userManager.GetUserId(User))
+            {
+                return Redirect("./Identity/Account/AccessDenied");
+            }
+
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
