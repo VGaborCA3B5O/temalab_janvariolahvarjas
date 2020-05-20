@@ -14,3 +14,4 @@ namespace WebApplication.Data.Entities
         public string ImageName { get; set; }
     }
 }
+
