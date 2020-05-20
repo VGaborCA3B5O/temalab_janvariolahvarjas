@@ -51,15 +51,19 @@ namespace WebApplication.Pages.Post
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || this.Image == null)
+            if (Post.Title == null)
             {
                 return Page();
             }
 
-            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
-            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
-            Image.CopyTo(new FileStream(filePath, FileMode.Create));
-            Post.ImageName = fileName;
+            if (this.Image != null)
+            {
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
+                string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Images", "Uploads", fileName);
+                Image.CopyTo(new FileStream(filePath, FileMode.Create));
+                Post.ImageName = fileName;
+            }
+
             _context.Attach(Post).State = EntityState.Modified;
 
             try
