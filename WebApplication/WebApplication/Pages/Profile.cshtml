@@ -5,7 +5,7 @@
 }
 
 <div class="card text-white bg-dark mx-auto" style="width: 32rem;">
-    <h4 class="card-header mt-1 mb-1">@Model.DisplayedUser.UserName</h4>
+    <h4 class="card-header mt-1 mb-1">@Model.DisplayedUser.Name</h4>
     <div class="card-body">
         <div class="container">
             <div class="row">
@@ -13,6 +13,7 @@
                     <img class="card-img" src="~/Images/@Model.DisplayedUser.ProfilePicture" alt="Avatar">
                 </div>
                 <div class="col-sm">
+                    <p>Username: @Model.DisplayedUser.UserName</p>
                     <p>Email: @Model.DisplayedUser.Email</p>
                     <p>@Model.DisplayedUser.Introduction</p>
                 </div>
