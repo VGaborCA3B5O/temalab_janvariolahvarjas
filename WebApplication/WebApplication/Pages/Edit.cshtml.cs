@@ -47,7 +47,7 @@ namespace WebApplication.Pages.Post
             {
                 return NotFound();
             }
-            else if (Post.UserId.ToString() != _userManager.GetUserId(User) && !User.IsInRole("Administrators"))
+            else if (Post.UserId.ToString() != _userManager.GetUserId(User))
             {
                 return Redirect("./Identity/Account/AccessDenied");
             }
